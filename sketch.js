@@ -1,18 +1,34 @@
-var y = 10;
+var sphere1;
+var x = 50;
+var y = 50;
 
 function setup() {
 	createCanvas(500,500);
-	stroke(200);
-	frameRate(20);
+	//stroke(200);
+	fill(255, 204)
+	background(100);
+	frameRate(50);
+	//noStroke();
+	//sphere1 = new sphere(10, 10, 40, 40);
 }
 
 function draw() {
-	ellipse(10, 10, 10, y);
-	/*background(100);
-	y = y - 1;
-	if (y < 0); {
-		y = height;
-	}
-	line(0, y, width, y);*/
+	
+	ellipse(x, y, 60, 60);
+	//sphere1 = new sphere(10, 10, 40, 40);
+	//sphere1.display();
+	x++;
 	y++;
+}
+
+function sphere(x, y, w, h) {
+	this.xLoc = x;
+	this.yLoc = y;
+	this.sWidth = w;
+	this.sHeight = h;
+
+	this.display = function() {
+		fill(35, 4, 16)
+		ellipse(xLoc, yLoc, sWidth, sHeight);
+	}
 }
