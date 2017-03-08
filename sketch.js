@@ -1,3 +1,5 @@
+//This is a random walk
+
 var sphere1;
 var x = 50;
 var y = 50;
@@ -9,7 +11,7 @@ function setup() {
 	background(100);
 	frameRate(10);
 	//noStroke();
-	sphere1 = new Sphere(50, 50, 40, 40);
+	sphere1 = new Sphere(250, 250, 40, 40);
 	//sphere2 = new Sphere
 }
 
@@ -33,13 +35,17 @@ function Sphere(x, y, w, h) {
 	this.sHeight = h;
 	
 	this.step = function() {
-		var stepX = random(10);
-		var stepY = random(10);
-		if (x < 100) {
+		var randomNum = random();
+		
+		var stepX = 10;
+		var stepY = 10;
+		if (randomNum < .25) {
 			x += stepX;
+		} else if (randomNum < .5) {
 			y += stepY;
-		} else {
+		} else if (randomNum < .75) {
 			x -= stepX;
+		} else {
 			y -= stepY;
 		}
 		console.log(x);
