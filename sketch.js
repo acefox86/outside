@@ -20,7 +20,7 @@ function draw() {
 	//sphere1 = new Sphere(10, 10, 40, 40);
 	sphere1.step();
 	sphere1.display();
-
+	
 }
 
 //function Sphere
@@ -35,10 +35,13 @@ function Sphere(x, y, w, h) {
 	this.step = function() {
 		var stepX = random(10);
 		var stepY = random(10);
-		
-		x += stepX;
-		y += stepY;
-		
+		if (x < 100) {
+			x += stepX;
+			y += stepY;
+		} else {
+			x -= stepX;
+			y -= stepY;
+		}
 		console.log(x);
 	}
 
