@@ -8,7 +8,7 @@ function setup() {
 	createCanvas(500,500);
 	//stroke(200);
 	fill(255, 204)
-	background(100);
+	//background(100);
 	frameRate(10);
 	//noStroke();
 	sphere1 = new Sphere(250, 250, 40, 40);
@@ -16,10 +16,11 @@ function setup() {
 }
 
 function draw() {
-	
+	//clear();
 	//ellipse(x, y, 60, 60);
 	console.log("hello");
 	//sphere1 = new Sphere(10, 10, 40, 40);
+	background(100);
 	sphere1.step();
 	sphere1.display();
 	
@@ -37,9 +38,11 @@ function Sphere(x, y, w, h) {
 	this.step = function() {
 		var randomNum = random();
 		
-		var stepX = 10;
-		var stepY = 10;
-		if (randomNum < .25) {
+		var stepX = 3;
+		var stepY = 3;
+		
+		//Sphere tends to the right
+		if (randomNum < .4) {
 			x += stepX;
 		} else if (randomNum < .5) {
 			y += stepY;
@@ -52,7 +55,7 @@ function Sphere(x, y, w, h) {
 	}
 
 	this.display = function() {
-		fill(35, 4, 16)
+		fill(255, 0, 0)
 		ellipse(x, y, this.sWidth, this.sHeight);
 	}
 }
