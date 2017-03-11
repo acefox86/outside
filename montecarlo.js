@@ -3,7 +3,7 @@ var x = 50;
 var y = 50;
 
 function setup() {
-	createCanvas(500,500);
+	createCanvas(600, 600);
 	//stroke(200);
 	fill(255, 204)
 	background(100);
@@ -30,10 +30,12 @@ function Sphere(x, y, w, h) {
 
 	this.step = function() {
 		
-		var randomNum1 = random(50,100);
-		var randomNum2 = random(50,100);
+		var randomNum1 = random(50,60);
+		var randomNum2 = random(50,60);
+		//var prob = (randomNum1 * randomNum1);
 		console.log(randomNum1);
 		console.log(randomNum2);
+		//console.log(prob);
 		var stepX = 1;
 		var stepY = 1;
 		var randomNum = random();
