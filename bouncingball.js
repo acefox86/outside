@@ -13,6 +13,7 @@ function setup() {
 	frameRate(100);
 	//noStroke();
 	sphereAsVector = new PVector(200, 100);
+	translate(width/2,height/2);
 }
 
 function draw() {
@@ -34,14 +35,14 @@ function draw() {
 
 	var mouseLoc = new PVector(mouseX, mouseY);
 	var center = new PVector(width/2, height/2);
-
+	console.log("width/2: " + width/2);
 	mouseLoc.sub(center);
 	console.log("mouseX: " + mouseX);
 	console.log("mouseY: " + mouseY);
 	console.log("mouseLoc.xVec: " + mouseLoc.xVec);
 	console.log("mouseLoc.yVec: " + mouseLoc.yVec);
-	translate(width/2,height/2);
-	line (0, 0, mouseLoc.xVec, mouseLoc.yVec);
+	//translate(width/2,height/2);
+	line (300, 300, mouseLoc.xVec, mouseLoc.yVec);
 }
 
 function PVector(xLoc, yLoc) {
