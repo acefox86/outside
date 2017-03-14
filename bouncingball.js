@@ -18,7 +18,7 @@ function setup() {
 
 function draw() {
 	background(100);
-	ellipse(x, y, 50, 50);
+	ellipse(x, y, 100, 50);
 	x = x + xSpeed;
 	y = y + ySpeed;
 	
