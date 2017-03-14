@@ -1,27 +1,27 @@
 //var x;
 //var y;
-var location;
-var velocity;
+//var location;
+//var velocity;
 
 function setup() {
 	createCanvas(600, 600);
 	background(100);
 	frameRate(10);
-	location = new PVector(100,100);
-	velocity = new PVector(10,10);
+	var location = new PVector(100,100);
+	var velocity = new PVector(10,10);
 	console.log("hi");
 }
 
 function draw() {
-	//location = new PVector(100,100);
-	//velocity = new PVector(50,50);
-
+	//var location = new PVector(100,100);
+	//var velocity = new PVector(300,50);
+	background(100);
 	//console.log("hey");
-	location.add(velocity);
+//	location.add(velocity);
 	//location.x++;
 	console.log(location.x);
-	location.display();
-	//ellipse(location.x, location.y, 50,50);
+//	location.display();
+	ellipse(location.x, location.y, 100,100);
 }
 
 
