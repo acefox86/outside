@@ -6,6 +6,7 @@ var shape2 = new VectorObject(60, 70);
 
 function setup() {
 	createCanvas(400, 400);
+	frameRate(5);
 }
 
 function draw() {
@@ -14,6 +15,7 @@ function draw() {
 	ellipse(shape2.x, shape2.y, 50, 50);
 	var added = shape1.add(shape2);
 	console.log(added.x);
+	ellipse(added.x, added.y, 30, 30);
 }
 
 function VectorObject (x,y) {
