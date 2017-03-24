@@ -1,60 +1,71 @@
 
+console.log("hi");
 
-/*Below is the first  attempt which giving me so much trouble*/
+var locAtion = new VectorObject(50, 30);
+var veloCity = new VectorObject(10, 10);
+var accelEration = new VectorObject(-0.005, 0.01);
 
-
-var location = new PVector(50,50);
-//var bg = 100;
-var velocity = new PVector(10,10);
+var locAtion2 = new VectorObject(20, 20);
+var veloCity2 = new VectorObject(50,1);
+var accelEration2// = new VectorObject(Math.random(), Math.random())
+var topSpeed;
 
 function setup() {
-	createCanvas(600, 600);
-	//background(bg);
-	frameRate(10);
-	//location = createVector(100,100);
-	//velocity = createVector (5,5);
-	//location = new PVector(50, 50);
-	//velocity = new PVector(10,10);
-
-	console.log("hi");
+	createCanvas(500, 500);
+	frameRate(20);
 }
 
 function draw() {
-	//var location = new PVector (10, 69);
-	//var location = new PVector (30, 56);
-	fill(200);
-	ellipse(50,50,50,50);
-	background(100);
-	/*
-	//location.add(velocity);
-	//location.display();
-	if (location.x > width || location.x < 0) {
-		velocity.x = (velocity.x * -1);
+	background(100, 200, 200);
+	fill(50, 60, 70);
+	
+	accelEration2 = new VectorObject(-Math.random(), Math.random());
+	ellipse(locAtion2.x, locAtion2.y, 30, 30);
+	veloCity2 = veloCity2.add(accelEration2);
+	locAtion2 = locAtion2.add(veloCity2);
+
+	fill(90, 30, 50);
+	
+	ellipse(locAtion.x, locAtion.y, 50, 50);
+	veloCity = veloCity.add(accelEration);
+    locAtion = locAtion.add(veloCity);
+
+	console.log("accelEration.x: " + accelEration.x);
+	console.log("accelEration.y: " + accelEration.y);
+	console.log("veloCity.x: " + veloCity.x);
+	console.log("veloCity.y: " + veloCity.y);
+	
+	console.log("accelEration2.x: " + accelEration2.x);
+	console.log("accelEration2.y: " + accelEration2.y);
+	console.log("locAtion2.x: " + locAtion2.x);
+	console.log("locAtion2.y: " + locAtion2.y);
+
+	if (locAtion2.x > width || locAtion2.x < 0) {
+		veloCity2.x = (veloCity2.x * -1);
 	}
-	if (location.y > height || location.y < 0) {
-		velocity.y = (velocity.y * -1);
-	}*/
-	background(144);
+	if (locAtion2.y > height || locAtion2.y < 0) {
+		veloCity2.y = (veloCity2.y * -1);
+	}
+
+	if (locAtion.x > width || locAtion.x < 0) {
+		veloCity.x = (veloCity.x * -1);
+	}
+	if (locAtion.y > height || locAtion.y < 0) {
+		veloCity.y = (veloCity.y * -1);
+	}
 }
 
-
-function PVector(x, y) {
+function VectorObject (x,y) {
 	this.x = x;
 	this.y = y;
-}	
-	/*this.add = function (PVector) {
-		xVec = xVec + PVector.x;
-		yVec = yVec + PVector.y;
-		console.log("in add");
-		console.log("this.x: " + this.x);
-		console.log("this.y: " + this.y);
-		console.log("vector.x: " + PVector.x);
-	}
-	
-	this.display = function () {
-		ellipse(this.xVec,this.yVec, 20, 20);
-	}
 }
 
+VectorObject.prototype.add = function (VecObj) {
+	var addedX = this.x + VecObj.x;
+	var addedY = this.y + VecObj.y;
+	return new VectorObject(addedX, addedY);
+}
 
-*/
+VectorObject.prototype.limit = function () {
+  //if()
+}
